@@ -86,7 +86,33 @@ t_stat_2, p_value_2 = stats.ttest_1samp(datos_2, 70, alternative='greater')
 
 print(f'Estadístico t: {t_stat_2}')
 print(f'Valor p: {p_value_2}')
+print("")
 
+#----------------------------------------------------------------------------
+
+
+print('prueba t para un 75%','\n')
+#----------------------------------------------------------------------------
+print('prueba t de los datos iniciales')
+t_stat_i, p_value_i = stats.ttest_1samp(datos_i, 75, alternative='greater')
+
+print(f'Estadístico t: {t_stat_i}')
+print(f'Valor p: {p_value_i}','\n')
+#----------------------------------------------------------------------------
+print('prueba t del primer cambio')
+t_stat_1, p_value_1 = stats.ttest_1samp(datos_1, 75, alternative='greater')
+
+print(f'Estadístico t: {t_stat_1}')
+print(f'Valor p: {p_value_1}','\n')
+#----------------------------------------------------------------------------
+print('prueba t del segundo cambio')
+t_stat_2, p_value_2 = stats.ttest_1samp(datos_2, 75, alternative='greater')
+
+print(f'Estadístico t: {t_stat_2}')
+print(f'Valor p: {p_value_2}')
+
+#----------------------------------------------------------------------------
+print("")
 # Ajustar los datos a una normal, estimando la desviacion estandar
 
 print("Estimacion de la desviacion estandar",'\n')
