@@ -45,30 +45,21 @@ plt.xlabel('Rendimiento')
 plt.ylabel('Frecuencia')
 plt.title('Segundo cambio')
 
-# Desviación estándar por MLE
-# def estimador_sigma(pdatos):
-    # """
-    # Calcula el estimador de máxima verosimilitud para la desviación estándar de una muestra de datos.
-
-    # Parámetros:
-    # pdatos (list o numpy array): La muestra de datos.
-
-    # Salida:
-    # float: Estimador de la desviación estándar.
-    # """
-    # n = len(pdatos)
-    # x = np.mean(pdatos)
-    # suma_cuadrados = np.sum((pdatos - x) ** 2)
-    # sigma = np.sqrt(suma_cuadrados / n)
-    
-    # return sigma
-# sigma_2=estimador_sigma(datos_2)
-# print(f"El estimador de la desviación estándar para el segundo cambio es: {sigma_2}")
-
-# Realizar la prueba t de una muestra
-
 #   Prueba de Hipotesis H_0: \mu = 70
+"""
+La función stats.ttest_1samp en Python, que proviene del módulo scipy.stats, se utiliza para realizar una prueba t de una muestra para probar si la media de una muestra es significativamente diferente de una media poblacional hipotética.
 
+Los parámetros principales de la función stats.ttest_1samp son:
+
+a: Los datos de la muestra que se están probando.
+popmean: La media poblacional hipotética que se está comparando con la media de la muestra.
+alternative: Esta especifica la hipótesis alternativa. Puede ser "two-sided" (dos lados), "greater" (mayor que), o "less" (menor que). Por defecto es "two-sided".
+La función devuelve dos valores:
+
+t_statistic: El valor de la estadística t calculada.
+p_value: El valor p asociado con la prueba, que indica la probabilidad de obtener una estadística t al menos tan extrema como la observada si la hipótesis nula (que la media de la muestra es igual a popmean) es verdadera.
+Entonces, la función realiza la prueba de hipótesis y devuelve el valor de la estadística t y el valor p correspondiente. Dependiendo del valor p obtenido, se puede tomar una decisión sobre si rechazar o no la hipótesis nula.
+"""
 print('prueba t','\n')
 #----------------------------------------------------------------------------
 print('prueba t de los datos iniciales')
