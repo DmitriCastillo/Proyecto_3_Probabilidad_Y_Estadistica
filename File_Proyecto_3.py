@@ -52,25 +52,45 @@ plt.xlabel('Rendimiento')
 plt.ylabel('Frecuencia')
 plt.title('Segundo cambio')
 
+# Desviación estándar por MLE
+# def estimador_sigma(pdatos):
+    # """
+    # Calcula el estimador de máxima verosimilitud para la desviación estándar de una muestra de datos.
+
+    # Parámetros:
+    # pdatos (list o numpy array): La muestra de datos.
+
+    # Salida:
+    # float: Estimador de la desviación estándar.
+    # """
+    # n = len(pdatos)
+    # x = np.mean(pdatos)
+    # suma_cuadrados = np.sum((pdatos - x) ** 2)
+    # sigma = np.sqrt(suma_cuadrados / n)
+    
+    # return sigma
+# sigma_2=estimador_sigma(datos_2)
+# print(f"El estimador de la desviación estándar para el segundo cambio es: {sigma_2}")
+
 # Ajustar los datos a una normal, estimando la media y la desviacion estandar
 
 
-print("Estimacion de la media y desviacion estandar",'\n')
+print("Estimacion de la desviacion estandar",'\n')
 #----------------------------------------------------------------------------
 print('Rendimiento de la maquina inicial')
-loc_inicial, scale_inicial = stats.norm.fit(datos_i)
-print(f'Estimacion de la media: {loc_inicial}')
-print(f'Estimacion de la desviacion estandar: {scale_inicial}','\n')
+media_i = np.mean(datos_i)
+scale_inicial = stats.norm.fit(datos_i,floc=media_i)
+print(f'Estimacion de la desviacion estandar: {scale_inicial[1]}','\n')
 #----------------------------------------------------------------------------
 print('Rendimiento de la maquina en el primer cambio')
-loc_cambio1, scale_cambio1 = stats.norm.fit(datos_1)
-print(f'Estimacion de la media: {loc_cambio1}')
-print(f'Estimacion de la desviacion estandar: {scale_cambio1}','\n')
+media_1 = np.mean(datos_1)
+scale_1 = stats.norm.fit(datos_1,floc=media_1)
+print(f'Estimacion de la desviacion estandar: {scale_1[1]}','\n')
 #----------------------------------------------------------------------------
 print('Rendimiento de la maquina en el segundo cambio cambio')
-loc_cambio2, scale_cambio2 = stats.norm.fit(datos_2)
-print(f'Estimacion de la media: {loc_cambio2}')
-print(f'Estimacion de la desviacion estandar: {scale_cambio2}','\n')
+media_2 = np.mean(datos_2)
+scale_2 = stats.norm.fit(datos_2,floc=media_2)
+print(f'Estimacion de la desviacion estandar: {scale_2[1]}','\n')
 #----------------------------------------------------------------------------
 
 # Realizar la prueba t de una muestra
